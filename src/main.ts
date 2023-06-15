@@ -1,16 +1,7 @@
-import Fastify, { FastifyInstance, FastifyError, FastifyReply, FastifyRequest } from 'fastify';
+import Fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
 
-type FastifyDone = (err?: FastifyError) => void;
-
-const health = (fastify: FastifyInstance, _: unknown, done: FastifyDone) => {
-  fastify.get('/health', async (_: FastifyRequest, reply: FastifyReply) => {
-    reply.code(200).send({ message: 'ok' });
-    return;
-  });
-
-  done();
-};
+import health from './health';
 
 const start = async () => {
   const server: FastifyInstance = Fastify({

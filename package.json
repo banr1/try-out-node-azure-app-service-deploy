@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
     "dev": "nodemon src/main.ts",
-    "format": "prettier --write \"src/**/*.ts\" --config ../../.vscode/.prettierrc.js",
     "dev:studio": "prisma studio",
+    "format": "prettier --write \"src/**/*.ts\" --config ../../.vscode/.prettierrc.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
